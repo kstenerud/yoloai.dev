@@ -1,0 +1,34 @@
+# Hugo build output
+/public/
+/resources/_gen/
+
+# Hugo development server
+hugo_stats.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Hugo module vendoring (uncomment if not committing vendored modules)
+# /_vendor/
+
+# Node (if using PostCSS, Tailwind, etc.)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment / secrets
+.env
+.env.*
+
+# Compiled CSS (if generated via build pipeline)
+/assets/output/
