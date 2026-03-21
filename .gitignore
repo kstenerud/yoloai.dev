@@ -32,3 +32,4 @@ yarn.lock
 
 # Compiled CSS (if generated via build pipeline)
 /assets/output/
+.hugo_build.lock

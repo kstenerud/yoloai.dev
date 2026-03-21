@@ -1,0 +1,48 @@
+baseURL = "https://yoloai.dev/"
+languageCode = "en-us"
+title = "yoloAI"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  description = "Sandboxed runner for AI coding agents. Review the diff. Apply what you want."
+  author = "kstenerud"
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  defaultTheme = "dark"    # engineers expect dark mode
+
+[params.homeInfoParams]
+  Title = "yoloAI"
+  Content = """
+Run AI coding agents freely in a disposable sandbox.
+Review exactly what changed. Apply what you want.
+
+```bash
+yoloai new fix-bug ~/projects/myapp
+yoloai diff fix-bug
+yoloai apply fix-bug
+```
+
+→ [Get started](https://github.com/kstenerud/yoloai) · [Why yoloAI](/posts/why-yoloai)
+"""
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/kstenerud/yoloai"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    name = "Docs"
+    url = "https://github.com/kstenerud/yoloai/blob/main/docs/GUIDE.md"
+    weight = 20
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/kstenerud/yoloai"
+    weight = 30
+
