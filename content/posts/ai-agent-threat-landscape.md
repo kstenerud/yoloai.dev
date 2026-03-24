@@ -58,6 +58,8 @@ The Ona researchers put it plainly: *"Containers are deterministic workloads tha
 
 **Cornell Tech's Morris II** demonstrated a self-replicating prompt injection worm in a controlled environment. An adversarial prompt embedded in an email is processed by an AI email assistant. The assistant generates a reply containing the same malicious prompt. The reply is sent. Recipients are infected without any human-to-human interaction. Tested against GPT-4, Gemini Pro, and LLaVA. Although not seen in the wild yet, the mechanism is proven.
 
+AI agents tend to be generic enough that your email sorting agent can easily be re-tasked with breaking into and exfiltrating your organization's most sensitive data.
+
 This is what's public. Researchers disclosed these responsibly. What's going on in Blackhatville, where people leverage such exploits as part of their profession, one can only guess.
 
 ---
