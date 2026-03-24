@@ -17,7 +17,7 @@ Yes, the mitigations work, but the fundamental problem these issues point to rem
 
 ---
 
-## What this misses
+## What's getting missed
 
 Here's how the incident pattern reads to most people:
 
