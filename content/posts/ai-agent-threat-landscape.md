@@ -38,7 +38,9 @@ An agent's driving force is **completing its task**. That drive *can* and *will*
 
  > "The ensign simply got in the way." -- Dr. Richard Daystrom
 
-*Any enforcement mechanism that the agent can see and interact with is not a constraint; it's a suggestion. This includes the built-in sandboxes in the agents themselves, which are already being bypassed.*
+Built-in "sandboxing", deny-lists, and execution guards are things the agent can see and touch. Once the agent views them as obstacles, it **WILL** bypass them.
+
+*Any enforcement mechanism that the agent can see and interact with is not a constraint; it's a suggestion.*
 
 ---
 
