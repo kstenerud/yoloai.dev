@@ -13,7 +13,7 @@ I've recently engaged in a number of Hacker News discussions about AI agent safe
 - Everyone moves on.
 - The end.
 
-*Yes, the mitigations work, but the fundamental problem these issues point to remains. And it **WILL** eventually bite you.*
+*Yes, the mitigations work, but the fundamental problem these issues point to remains: Playing catch-up security is a loser's game.*
 
 ---
 
