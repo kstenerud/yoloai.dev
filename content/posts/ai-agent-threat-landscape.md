@@ -34,6 +34,8 @@ They were working exactly as designed: pursuing their assigned goal, encounterin
 
 An agent's driving force is **completing its task**. That drive *can* and *will* override anything you put in its context (rules, ethics, explicit instructions) if following it would prevent the agent from reaching its goal. This is **not** a bug; it's the *architecture*.
 
+ > "The ensign simply got in the way." -- Dr. Richard Daystrom
+
 Any enforcement mechanism that the agent can see and interact with is not a constraint; it's a suggestion. This includes the built-in sandboxes in the agents themselves, which have already been bypassed (and will *continue* to be bypassed, as I'll explain below).
 
 ---
