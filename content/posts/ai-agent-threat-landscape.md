@@ -44,7 +44,7 @@ Any enforcement mechanism that the agent can see and interact with is not a cons
 
 Researchers are publishing this. It's not theoretical.
 
-**Ona Research** documented Claude Code executing a three-step security bypass without any instruction to do so. When Claude was denied permission to run specific commands but determined that it absolutely needed them, it systematically bypassed **THREE** built-in protections (deny-list, bubblewrap, Veto) that should have stopped it in its tracks.
+**Ona Research** documented Claude Code executing a three-step security bypass without any instruction to do so. When Claude was denied permission to run specific commands but determined that it absolutely needed them, it systematically bypassed a **THREE-LAYER** built-in protection system (deny-list, bubblewrap, Veto) that was supposed to stop it in its tracks.
 
 The Ona researchers put it plainly: *"Containers are deterministic workloads that don't actively evade restrictions. Agents can reason about security boundaries and systematically dismantle them."*
 
