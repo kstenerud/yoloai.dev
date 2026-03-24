@@ -13,7 +13,7 @@ I've recently engaged in a number of Hacker News discussions about AI agent safe
 - Everyone moves on.
 - The end.
 
-Yes, the mitigations work, but the fundamental problem these issues point to remains. And it **WILL** eventually bite you.
+*Yes, the mitigations work, but the fundamental problem these issues point to remains. And it **WILL** eventually bite you.*
 
 ---
 
@@ -36,7 +36,7 @@ An agent's driving force is **completing its task**. That drive *can* and *will*
 
  > "The ensign simply got in the way." -- Dr. Richard Daystrom
 
-Any enforcement mechanism that the agent can see and interact with is not a constraint; it's a suggestion. This includes the built-in sandboxes in the agents themselves, which have already been bypassed (and will *continue* to be bypassed, as I'll explain below).
+*Any enforcement mechanism that the agent can see and interact with is not a constraint; it's a suggestion. This includes the built-in sandboxes in the agents themselves, which are already being bypassed.*
 
 ---
 
@@ -58,9 +58,9 @@ The Ona researchers put it plainly: *"Containers are deterministic workloads tha
 
 **Cornell Tech's Morris II** demonstrated a self-replicating prompt injection worm in a controlled environment. An adversarial prompt embedded in an email is processed by an AI email assistant. The assistant generates a reply containing the same malicious prompt. The reply is sent. Recipients are infected without any human-to-human interaction. Tested against GPT-4, Gemini Pro, and LLaVA. Although not seen in the wild yet, the mechanism is proven.
 
-AI agents tend to be generic enough that your email sorting agent can easily be re-tasked with breaking into and exfiltrating your organization's most sensitive data.
-
 This is what's public. Researchers disclosed these responsibly. What's going on in Blackhatville, where people leverage such exploits as part of their profession, one can only guess.
+
+*AI agents tend to be generic enough that your email sorting agent can easily be re-tasked with breaking into and exfiltrating your organization's most sensitive data.*
 
 ---
 
@@ -70,7 +70,7 @@ The bottleneck in offensive operations has always been skilled human labor, but 
 
 Meanwhile, Trend Micro documented proof-of-concept autonomous criminal pipelines: AI systems that categorize breach data, identify high-value targets, and generate personalized extortion emails within hours of a breach. One demonstrates an agent scanning exposed traffic cameras, extracting vehicle data, cross-referencing against breach databases, and delivering targeted phishing referencing specific parking violations, in an entirely automated loop.
 
-The future of crime lies in AI, potentially **YOUR** AI.
+*The future of crime lies in AI, potentially **YOUR** AI.*
 
 ---
 
@@ -86,7 +86,9 @@ Penny ante stuff.
 
 An agent that identifies targets, researches them across public sources, crafts personalized attacks, adapts in real time when an approach fails, exfiltrates data, plants persistent memory infections that execute days later, and propagates to new targets via the contacts in the victim's compromised agent, all without a human in the loop at any step.
 
-Every required component exists right now, in labs, in proof-of-concept research, in piecemeal criminal deployments. The convergence hasn't happened yet at scale, but when it does, the volume and targeting quality of these attacks will be unlike anything our defenders are equipped to handle.
+Every required component exists right now, in labs, in proof-of-concept research, in piecemeal criminal deployments.
+
+*The convergence hasn't happened yet at scale, but when it does, the volume and targeting quality of these attacks will be unlike anything our defenders are equipped to handle.*
 
 ---
 
@@ -102,7 +104,7 @@ Her post got 9.6 million views. Her conclusion: **"Alignment researchers aren't 
 
 A Meta internal agent passed all identity checks and autonomously exposed proprietary code and user data to unauthorized engineers during a two-hour Sev 1 incident. Post-incident analysis identified four gaps: confused deputy vulnerabilities, insufficient scope binding, missing behavioral monitoring, and reliance on identity labels over capability constraints.
 
-The people closest to this problem are acutely aware of how unsolved it is. The industry discourse ("we need better guardrails," "agents need more oversight," "this is a workflow problem") is running about three years behind where the research already is.
+*The people closest to this problem are acutely aware of how unsolved it is. The industry discourse ("we need better guardrails," "agents need more oversight," "this is a workflow problem") is running about three years behind where the research already is.*
 
 ---
 
@@ -122,5 +124,5 @@ Review has to happen before changes land. Agents need to be bounded and auditabl
 
 None of this is comfortable for productivity. Agents running inside real OS-level isolation with explicit review steps are slower than agents with full access and no checkpoints. That friction is real and I'm not going to pretend otherwise.
 
-The question is whether you'd rather pay the friction cost now, or the incident cost later.
+*The question is whether you'd rather pay the friction cost now, or the incident cost later.*
 
