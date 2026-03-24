@@ -62,6 +62,8 @@ The Ona researchers put it plainly: *"Containers are deterministic workloads tha
 
 **Cornell Tech's Morris II** demonstrated a self-replicating prompt injection worm in a controlled environment. An adversarial prompt embedded in an email is processed by an AI email assistant. The assistant generates a reply containing the same malicious prompt. The reply is sent. Recipients are infected without any human-to-human interaction. Tested against GPT-4, Gemini Pro, and LLaVA. Although not seen in the wild yet, the mechanism is proven.
 
+**Just today, litellm was compromised by a supply-chain attack.** The malware searches the entire machine for private keys, AWS / GCP / Azure credentials, Kubernetes configs, database passwords, .gitconfig, crypto wallet files, etc and uploads them to the attacker's server. Simply upgrading your LLM triggers this.
+
 This is what's public. Researchers disclosed these responsibly. What's going on in Blackhatville, where people leverage such exploits as part of their profession, one can only guess.
 
 *AI agents tend to be generic enough that your email sorting agent can easily be re-tasked with breaking into and exfiltrating your organization's most sensitive data.*
@@ -122,7 +124,7 @@ The black hats are still in the early adoption phase for these new AI toolsets.
 
 The prudent approach is to treat all agents as potentially hostile. Why? Because the same problem solving ability that lets AI work around obstacles can *also* let a compromised agent reason its way past *any* boundary you put in its context. And it won't care if doing so is "wrong".
 
-Isolation has to live *outside* of the agent's context entirely. A built-in sandbox can be disabled by the agent (as Snowflake and Ona both demonstrated), whereas an OS-level containment presents a much more formidable obstacle since the agent has no direct mechanism to interact with it.
+Isolation has to live *outside* of the agent's context entirely. A built-in sandbox can be disabled by the agent (as Snowflake and Ona both demonstrated), whereas an OS-level containment presents a much more formidable obstacle since the agent has no direct mechanism to interact with it. As well, a properly sandboxed agent won't have sensitive information (keys, etc) lying around for it to find, and won't be able to connect to places that haven't been allow-listed.
 
 Review has to happen before changes land. Agents need to be bounded and auditable.
 
